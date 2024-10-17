@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <title>Interaktionsdesign 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   
+</head>
+
+<body>
+
+    <div id="headerbox">
+        <h1>Torups slott</h1>
+    </div>
+
+    <div id="flex">
+        <!-- Div för kartan -->
+        <div id="map"></div>
+        <div id="settings">
+            <p>Inställningar</p>
+            <!-- Lägg till inställningar här om det behövs -->
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalContent" class="modal-html" style="display:none;"></div> <!-- För HTML-innehåll -->
+    </div>
+
+    <!-- Leaflet JavaScript (laddas först) -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Din JavaScript-fil (laddas efter Leaflet.js) -->
+    <script src="javascript.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="utf-8">
+  <title>Interaktionsdesign 2</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+
+  <div id="headerbox">
+    <h1>Torups slott</h1>
+  </div>
+
+  <div id="flex">
+
+ 
+  <div id="map"></div>
+  <div id="settings"><p>Inställningar</p></div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+  
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+ 
+  <script src="javascript.js"></script>
+</body>
+
+</html>
+
+-->
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="sv">
+
+   <head>
+      <meta charset="utf-8">
+      <title>Interaktionsdesign 2</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+      <script src="javascript.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   </head>
+
+   <body>
+
+      <div id="headerbox">
+        <h1>Torups slott</h1>
+      </div>
+
+      <div id="picholder">
+
+       
+      </div>
+   </body>
+</html>
