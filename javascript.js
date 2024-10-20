@@ -2,10 +2,6 @@
 // Markers för bilder
 let picMarkers = [
   {
-    position: [500, 390],
-    imageUrl: "img/slott.jpeg",
-  },
-  {
     position: [390, 391],
     imageUrl: "img/entrance.jpeg",
   },
@@ -43,7 +39,7 @@ let hMarker = [
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/stencomp.jpg" alt="Drunkningsolyckan 1775" class="infoimg">
       </div>
     `
   },
@@ -52,12 +48,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Fontänen
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/fontain.jpg" alt="Fontän" class="infoimg">
       </div>
     `
   },
@@ -66,12 +62,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Köksträdgården
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/veggarden.jpg" alt="Köksträdgården" class="infoimg">
       </div>
     `
   },
@@ -80,12 +76,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Minnesmärke
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/sten.jpg" alt="Minnesmärke" class="infoimg">
       </div>
     `
   },
@@ -94,12 +90,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Kryddgården
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/garden.jpg" alt="Kryddgården" class="infoimg">
       </div>
     `
   },
@@ -108,12 +104,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Ameliden
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/almeliden.jpg" alt="Ameliden" class="infoimg">
       </div>
     `
   },
@@ -122,12 +118,12 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Djurkyrkogården
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/grave.jpg" alt="Djurkyrkogården" class="infoimg">
       </div>
     `
   },
@@ -136,20 +132,47 @@ let hMarker = [
     content: `
       <div class="infodiv">
         <h2 class="infotext">
-        Drunkningsolyckan 1775
+        Humlegården
         <img src="img/audio.svg" class="audioimg">
         </h2>
         <div class="background">
         </div>
-        <img src="img/stencomp.jpg" alt="sten" class="infoimg">
+        <img src="img/humle.jpg" alt="Humlegården" class="infoimg">
       </div>
     `
   },
 ];
 
+
+
+
+
+
+
+
+
 function init() {
   createMap();
   createHMarkers();
+  addrestmarker();
+  addfactmarker();
+
+  let expandButton = document.getElementById("expandButton");
+  let expandableDiv = document.getElementById("expandableDiv");
+
+  // Lägg till en klick-händelse för knappen
+  expandButton.addEventListener("click", function () {
+      // Kontrollera om div-boxen är dold eller synlig
+      if (expandableDiv.style.display === "none" || expandableDiv.style.display === "") {
+          expandableDiv.style.display = "block";  // Visa div-boxen
+          expandButton.textContent = "Stäng";  // Ändra knappens text till "Stäng"
+      } else {
+          expandableDiv.style.display = "none";  // Dölj div-boxen
+          expandButton.innerHTML = 'Mer <img src="img/arrow.svg" alt="pil" id="arrow">' ;  // Återställ knappens text
+      }
+  });
+
+
 }
 window.addEventListener("load", init);
 
@@ -259,4 +282,55 @@ function createHMarkers() {
     });
   });
 }
+
+function addrestmarker() {
+
+   let position = [115, 360]; 
+
+   let restIcon = L.icon({
+    iconUrl: "img/restpin.svg", 
+    iconSize: [35, 35],
+    iconAnchor: [25, 50], 
+    popupAnchor: [0, -50] 
+  });
+
+   let popupContent = `
+     <div>
+       <h3>Torups slottscafé</h3>
+       <p>På Torups slottscafé finns både mat och fika. Besök oss för att se om något faller dig i smak!</p>
+       <a href="cafe.html" class="popupbtn">Se meny och öppetider</a>
+     </div>
+   `;
+
+   let marker = L.marker(position,{ icon: restIcon } ).addTo(map);
+ 
+   marker.bindPopup(popupContent);
+
+}
+
+
+function addfactmarker() {
+
+  let position = [500, 390]; 
+
+  let restIcon = L.icon({
+   iconUrl: "img/starpin.svg", 
+   iconSize: [35, 35],
+   iconAnchor: [25, 50], 
+   popupAnchor: [0, -50] 
+ });
+
+  let popupContent = `
+    <div>
+      <p>Är du mer intresserad av Torups historia?</p>
+      <a href="fact.html" class="popupbtn">Se mer fakta</a>
+    </div>
+  `;
+
+  let marker = L.marker(position,{ icon: restIcon } ).addTo(map);
+
+  marker.bindPopup(popupContent);
+
+}
+
 
