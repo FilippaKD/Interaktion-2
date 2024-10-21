@@ -173,6 +173,10 @@ function init() {
   });
 
 
+
+
+
+
 }
 window.addEventListener("load", init);
 
@@ -186,8 +190,8 @@ function createMap() {
     maxBoundsViscosity: 1.0
   });
 
-  let imageURL = "img/map.svg";
-  let imageBounds = [[0, 0], [1000, 1000]];
+  let imageURL = "img/pngkarta.png";
+  let imageBounds = [[0, 0], [487, 1320]];
 
   // Bildöverlagring på kartan
   L.imageOverlay(imageURL, imageBounds).addTo(map);
@@ -223,11 +227,11 @@ function zoomOut() {
   map.zoomOut();
 }
 
-// Modalfönster för både bild och HTML-innehåll
+
 function openModal(imageUrl = null, htmlContent = null) {
   let modal = document.getElementById("myModal");
   let modalImg = document.getElementById("modalImage");
-  let modalHtmlContent = document.getElementById("modalContent"); // Ny div för HTML-innehåll
+  let modalHtmlContent = document.getElementById("modalContent"); 
 
   modalImg.style.display = "none";
   modalHtmlContent.style.display = "none";
@@ -333,4 +337,20 @@ function addfactmarker() {
 
 }
 
+function toggleFactPins(checkbox) {
+  if (checkbox.checked) {
+      map.addLayer(factMarkerGroup);  // Visa pins
+  } else {
+      map.removeLayer(factMarkerGroup);  // Dölja pins
+  }
+}
+
+// Döljer/visar bildpins baserat på checkbox-status
+function togglePicPins(checkbox) {
+  if (checkbox.checked) {
+      map.addLayer(picMarkerGroup);  // Visa pins
+  } else {
+      map.removeLayer(picMarkerGroup);  // Dölja pins
+  }
+}
 

@@ -6,7 +6,7 @@
     <title>Interaktionsdesign 2</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-   
+
 </head>
 
 <body id="greenbackground">
@@ -18,13 +18,44 @@
     <div id="flex">
         <div id="map"></div>
         <div id="setflex">
-        <button id="expandButton">Mer<img src="img/arrow.svg" alt="pil" id="arrow"></button></div>
+            <button id="expandButton">Mer<img src="img/arrow.svg" alt="pil" id="arrow"></button>
+        </div>
 
 
-<div id="expandableDiv" style="display: none;">
-    <h2>Inställningar</h2>
-    <p>Inställningar</p>
-</div>
+        <div id="expandableDiv" style="display: none;">
+            <div class="togglediv">
+                <img src="img/faktapin.svg" alt="fakta" class="togglepin" id="faktaPin">
+                <p class="toggletext">Fakta</p>
+                <label class="toggle">
+                    <input type="checkbox" onchange="togglePin('faktaPin', this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="togglediv">
+                <img src="img/bildPin.svg" alt="bilder" class="togglepin" id="bilderPin">
+                <p class="toggletext">Bilder</p>
+                <label class="toggle">
+                    <input type="checkbox" onchange="togglePin('bilderPin', this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="togglediv">
+                <img src="img/starpin.svg" alt="mer fakta" class="togglepin" id="historiaPin">
+                <p class="toggletext">Historia</p>
+                <label class="toggle">
+                    <input type="checkbox" onchange="togglePin('historiaPin', this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="togglediv">
+                <img src="img/restpin.svg" alt="cafe" class="togglepin" id="cafePin">
+                <p class="toggletext">Café</p>
+                <label class="toggle">
+                    <input type="checkbox" onchange="togglePin('cafePin', this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
     </div>
 
     <div id="myModal" class="modal">
@@ -41,7 +72,3 @@
 </body>
 
 </html>
-
-
-
-

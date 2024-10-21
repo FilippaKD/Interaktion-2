@@ -115,7 +115,8 @@ cursor: pointer;
 
 #expandableDiv {
     position: absolute; /* Gör att den kan placeras relativt till den närmaste positionerade förfadern */
-     bottom: 40px;
+    
+    bottom: 40px;
     left: 50%; /* Centrerar boxen horisontellt */
     transform: translateX(-50%); /* Flyttar boxen tillbaka med hälften av sin bredd */
     background-color: #f9f9f9; /* Bakgrundsfärg */
@@ -150,6 +151,68 @@ cursor: pointer;
     margin-top: 2px;
 }
 
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 27px;
+    margin-left: 10px;
+  }
+
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: rgb(61, 187, 61);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(23px);
+  }
+
+  .togglepin {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+  }
+
+  .togglediv {
+    display: flex;
+    gap: 5px;
+  }
+
+  .toggletext {
+    margin-top: 0px;
+  }
+
+ 
 
 
 
