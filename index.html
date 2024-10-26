@@ -6,6 +6,9 @@
     <title>Interaktionsdesign 2</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 
@@ -18,40 +21,40 @@
     <div id="flex">
         <div id="map"></div>
         <div id="setflex">
-            <button id="expandButton">Mer<img src="img/arrow.svg" alt="pil" id="arrow"></button>
+            <button id="expandButton">Inställningar<img src="img/arrow.svg" alt="pil" id="arrow"></button>
         </div>
 
 
         <div id="expandableDiv" style="display: none;">
             <div class="togglediv">
-                <img src="img/faktapin.svg" alt="fakta" class="togglepin" id="faktaPin">
-                <p class="toggletext">Fakta</p>
+                <img src="img/faktapin.svg" alt="fakta" class="togglepin" class="faktaPin">
+                <p class="toggletext" id="fakta">Fakta</p>
                 <label class="toggle">
-                    <input type="checkbox" onchange="togglePin('faktaPin', this)">
+                    <input type="checkbox" onchange="togglePin('faktaPin', this)" id="factcheck" checked>
                     <span class="slider"></span>
                 </label>
             </div>
             <div class="togglediv">
                 <img src="img/bildPin.svg" alt="bilder" class="togglepin" id="bilderPin">
-                <p class="toggletext">Bilder</p>
+                <p class="toggletext" id="bilder">Bilder</p>
                 <label class="toggle">
-                    <input type="checkbox" onchange="togglePin('bilderPin', this)">
+                    <input type="checkbox" onchange="togglePin('bilderPin', this)" checked>
                     <span class="slider"></span>
                 </label>
             </div>
             <div class="togglediv">
                 <img src="img/starpin.svg" alt="mer fakta" class="togglepin" id="historiaPin">
-                <p class="toggletext">Historia</p>
+                <p class="toggletext" id="historia">Historia</p>
                 <label class="toggle">
-                    <input type="checkbox" onchange="togglePin('historiaPin', this)">
+                    <input type="checkbox" id="historycheck" onchange="togglePin('historiaPin', this)" checked>
                     <span class="slider"></span>
                 </label>
             </div>
             <div class="togglediv">
                 <img src="img/restpin.svg" alt="cafe" class="togglepin" id="cafePin">
-                <p class="toggletext">Café</p>
+                <p class="toggletext" id="café">Café</p>
                 <label class="toggle">
-                    <input type="checkbox" onchange="togglePin('cafePin', this)">
+                    <input type="checkbox" id="cafecheck" onchange="togglePin('cafePin', this)" checked> 
                     <span class="slider"></span>
                 </label>
             </div>
@@ -61,13 +64,12 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
-        <div id="modalContent" class="modal-html" style="display:none;"></div> <!-- För HTML-innehåll -->
+        <div id="modalContent" class="modal-html" style="display:none;"></div>
     </div>
 
-    <!-- Leaflet JavaScript (laddas först) -->
+  
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <!-- Din JavaScript-fil (laddas efter Leaflet.js) -->
     <script src="javascript.js"></script>
 </body>
 
