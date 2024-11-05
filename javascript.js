@@ -202,7 +202,7 @@ let humleaudio = new Audio('mp3s/Humle.mp3');
 let kyrkogårdaudio = new Audio('mp3s/Kyrkogård.mp3');
 let kryddgårdaudio = new Audio('mp3s/Kryddgården.mp3');
 let köksträdgårdaudio = new Audio('mp3s/köksträdgård.mp3');
-let fontänaudio = new Audio('mp3s/Fontän.mp3');
+let fontänaudio = new Audio('mp3s/fontan.mp3');
 let drunkningaudio = new Audio('mp3s/drunkning.mp3');
 let almelidenaudio = new Audio('mp3s/Almeliden.mp3');
 
@@ -225,7 +225,7 @@ function init() {
 
   expandButton.addEventListener("click", function () {
     expandableDiv.style.display = expandableDiv.style.display === "block" ? "none" : "block";
-    expandButton.innerHTML = expandableDiv.style.display === "block" ? "Stäng" : 'Inställningar <img src="img/arrow.svg" alt="pil" id="arrow">';
+    expandButton.innerHTML = expandableDiv.style.display === "block" ? 'Inställningar <img src="img/arrow.svg" alt="pil" id="arrow" style="transform:rotateX(180deg)">' : 'Inställningar <img src="img/arrow.svg" alt="pil" id="arrow">';
   });
 
   document.addEventListener("click", function (event) {
@@ -292,14 +292,6 @@ function createMap() {
 
   picMarkerGroup.addTo(map);
 
-}
-
-function zoomIn() {
-  map.zoomIn();
-}
-
-function zoomOut() {
-  map.zoomOut();
 }
 
 function openModal(imageUrl = null, htmlContent = null) {
@@ -501,12 +493,8 @@ function togglePin(pinType, checkbox) {
     case 'cafePin':
       toggleCafePins(checkbox);
       break;
-    default:
-      console.log("Hittar inte pinntyp: " + pinType);
   }
 }
-
-
 
 
 function toggleFactPins(checkbox) {
@@ -594,6 +582,7 @@ function audioCases(audios) {
     case 'fontän':
       if (fontänaudio.paused) {
         fontänaudio.currentTime = 0;
+        console.log(fontänaudio);
         fontänaudio.play();
       }
       break;
