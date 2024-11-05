@@ -2,7 +2,6 @@ html {
     font-size: 20px;
     font-family: "Noto Serif", serif;
     scroll-behavior: smooth;
-
 }
 
 #greenbackground {
@@ -402,6 +401,7 @@ input:checked+.slider:before {
 
 .factwhite {
     background-color: white;
+    scroll-margin-top: 60px;
 
 }
 
