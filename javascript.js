@@ -277,7 +277,7 @@ function createMap() {
 
   let picmarker = L.icon({
     iconUrl: "img/bildPin.svg",
-    iconSize: [40, 40],
+    iconSize: [45, 45],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50]
   });
@@ -389,7 +389,7 @@ function createHMarkers() {
 
   let factIcon = L.icon({
     iconUrl: "img/faktapin.svg",
-    iconSize: [40, 40],
+    iconSize: [45, 45],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50]
   });
@@ -409,11 +409,11 @@ function createHMarkers() {
 // RÖR INTE DENNA DEN FUNKAR NU 
 function addrestmarker() {
 
-  let position = [28, 462];
+  let position = [33, 460];
 
   let restIcon = L.icon({
     iconUrl: "img/restpin.svg",
-    iconSize: [40, 40],
+    iconSize: [45, 45],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50]
   });
@@ -436,7 +436,7 @@ function addstarmarker() {
 
   let starIcon = L.icon({
     iconUrl: "img/starpin.svg",
-    iconSize: [40, 40],
+    iconSize: [45, 45],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50]
   });
